@@ -1,4 +1,4 @@
-const CACHE_NAME = 'farmacia-v2';
+const CACHE_NAME = 'farmacia-v4.4';
 
 const ARCHIVOS = [
   '/',

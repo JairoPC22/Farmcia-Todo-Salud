@@ -240,10 +240,10 @@ body:has(button:hover) .cursor{width:20px;height:20px}
 .hero-mesh{
   position:absolute;inset:0;pointer-events:none;
   background-image:
-    radial-gradient(ellipse 60% 50% at 78% 20%, rgba(192,120,50,.14) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 10% 78%, rgba(255,255,255,.05) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(30,80,143,.18) 0%, transparent 60%);
-  animation:meshShift 22s ease-in-out infinite alternate;
+    radial-gradient(ellipse 55% 45% at 80% 15%, rgba(192,120,50,.09) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(17,41,82,.8) 0%, transparent 55%),
+    radial-gradient(ellipse 35% 40% at 15% 30%, rgba(255,255,255,.03) 0%, transparent 50%);
+  animation:meshShift 25s ease-in-out infinite alternate;
 }
 @keyframes meshShift{
   from{background-position:0% 0%,0% 0%,0% 0%}
@@ -254,13 +254,7 @@ body:has(button:hover) .cursor{width:20px;height:20px}
 .hero-canvas{position:absolute;inset:0;pointer-events:none;opacity:.4}
 
 /* Grid overlay */
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-  background-size:60px 60px;pointer-events:none;
-}
+.hero::before{display:none}
 
 .hero-container{
   max-width:1200px;margin:0 auto;padding:80px 28px;
@@ -383,11 +377,7 @@ body:has(button:hover) .cursor{width:20px;height:20px}
   position:absolute;border-radius:50%;
   top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
 }
-.ring-a{
-  width:420px;height:420px;
-  border:1px solid rgba(255,255,255,.08);
-  animation:orbitSpin 20s linear infinite;
-}
+.ring-a,.ring-b{display:none}
 .ring-b{
   width:310px;height:310px;
   border:1px dashed rgba(255,255,255,.12);
@@ -439,24 +429,26 @@ body:has(button:hover) .cursor{width:20px;height:20px}
 /* Float cards */
 .fcard{
   position:absolute;z-index:4;
-  display:flex;align-items:center;gap:.75rem;
-  background:#fff;border-radius:14px;
-  padding:.75rem 1.1rem;
-  box-shadow:0 12px 36px rgba(0,0,0,.18);
-  border:1px solid rgba(255,255,255,.8);
+  display:flex;align-items:center;gap:.65rem;
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-radius:14px;
+  padding:.7rem 1rem;
+  box-shadow:0 8px 24px rgba(0,0,0,.2);
+  border:1px solid rgba(255,255,255,.12);
   white-space:nowrap;
 }
 .fcard-icon{
-  width:38px;height:38px;border-radius:10px;
+  width:34px;height:34px;border-radius:8px;
   display:flex;align-items:center;justify-content:center;
-  font-size:1rem;flex-shrink:0;
+  font-size:.9rem;flex-shrink:0;
 }
-.fcard-icon.blue{background:var(--blue-pale);color:var(--blue)}
-.fcard-icon.orange{background:var(--orange-pale);color:var(--orange)}
-.fcard-icon.green{background:#dcfce7;color:var(--green)}
-.fcard-info{display:flex;flex-direction:column;gap:.06rem}
-.fcard-info strong{font-size:.85rem;font-weight:800;color:var(--dark);font-family:var(--fh);line-height:1}
-.fcard-info span{font-size:.72rem;color:var(--gray-4);font-weight:500}
+.fcard-icon.blue{background:rgba(30,79,143,.3);color:#7eb8f7}
+.fcard-icon.orange{background:rgba(192,120,50,.25);color:#e8a85a}
+.fcard-icon.green{background:rgba(22,163,74,.2);color:#6ee7a0}
+.fcard-info strong{font-size:.82rem;font-weight:700;color:#fff;font-family:var(--fh);line-height:1}
+.fcard-info span{font-size:.7rem;color:rgba(255,255,255,.5);font-weight:400}
 
 .fcard-1{top:2%;right:-24px;animation:flt1 5s ease-in-out infinite}
 .fcard-2{bottom:18%;left:-32px;animation:flt2 6.5s ease-in-out infinite}
@@ -466,13 +458,7 @@ body:has(button:hover) .cursor{width:20px;height:20px}
 @keyframes flt2{0%,100%{transform:translateY(0) rotate(1.5deg)}50%{transform:translateY(-10px) rotate(-1.5deg)}}
 
 /* Deco blobs */
-.deco-blob{
-  position:absolute;z-index:2;
-  width:44px;height:44px;border-radius:50%;
-  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1rem;color:rgba(255,255,255,.65);backdrop-filter:blur(6px);
-}
+.deco-blob{display:none}
 .b1{top:10%;left:0;animation:flt2 8s ease-in-out infinite}
 .b2{top:50%;right:-20px;animation:flt1 9s ease-in-out infinite}
 .b3{bottom:12%;left:8px;animation:flt2 7s ease-in-out infinite reverse}
@@ -1147,23 +1133,25 @@ body:has(button:hover) .cursor{width:20px;height:20px}
    RESPONSIVE — LAPTOP
 ===================================================== */
 @media(max-width:1280px){
-  .hero-title{
-    font-size:clamp(2rem,4vw,3.2rem);
-  }
-  .hero-visual-wrap{width:380px;height:400px}
-  .hero-main-card{width:260px;padding:1.6rem 1.8rem}
-  .hmc-logo{width:190px}
-  .fcard-1{right:-10px}
-  .fcard-2{left:-16px}
+  .hero-title{font-size:clamp(1.8rem,3.5vw,2.8rem)}
+  .hero-container{gap:40px;padding:70px 28px}
+  .hero-visual-wrap{width:360px;height:380px}
+  .hero-main-card{width:250px;padding:1.5rem 1.6rem}
+  .hmc-logo{width:180px}
+  .fcard-1{right:-8px}
+  .fcard-2{left:-14px}
 }
 
 @media(max-width:1100px){
-  .hero-container{gap:32px}
-  .hero-title{font-size:clamp(1.9rem,3.8vw,3rem)}
-  .hero-visual-wrap{width:340px;height:360px}
-  .hero-main-card{width:240px}
-  .fcard{padding:.6rem .9rem}
-  .fcard-info strong{font-size:.78rem}
+  .hero-title{font-size:clamp(1.6rem,3.2vw,2.4rem)}
+  .hero-container{gap:24px;padding:60px 28px}
+  .hero-visual-wrap{width:300px;height:320px}
+  .hero-main-card{width:210px;padding:1.3rem 1.4rem}
+  .hmc-logo{width:155px}
+  .fcard{padding:.5rem .75rem}
+  .fcard-info strong{font-size:.75rem}
+  .fcard-info span{font-size:.66rem}
+  .fcard-3{display:none}
   .services-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
 }
@@ -1210,54 +1198,72 @@ body:has(button:hover) .cursor{width:20px;height:20px}
    RESPONSIVE — TABLET
 ===================================================== */
 @media(max-width:768px){
-  /* Navbar mobile */
+  /* Navbar mobile — siempre oscuro para que el toggle sea visible */
+  .navbar{
+    background:rgba(6,14,28,.95) !important;
+    backdrop-filter:blur(20px) !important;
+    -webkit-backdrop-filter:blur(20px) !important;
+    padding:12px 0 !important;
+  }
+  .nav-toggle{
+    display:flex !important;
+    z-index:10000 !important;
+    position:relative;
+  }
+  .nav-toggle span{background:#fff !important}
+  .nav-cta span{display:none}
+
+  /* Menú overlay */
   .nav-links{
     display:none;
     position:fixed;
-    top:0;left:0;right:0;bottom:0;
-    background:rgba(6,14,28,.97);
+    top:0;left:0;
+    width:100vw;
+    height:100vh;
+    height:100dvh;
+    background:rgba(6,14,28,.99);
     backdrop-filter:blur(24px);
     -webkit-backdrop-filter:blur(24px);
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:.5rem;
-    z-index:9990;
+    gap:.75rem;
+    z-index:9995;
     padding:20px;
     overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
   }
   .nav-links.open{
     display:flex;
-    animation:menuFadeIn .3s ease forwards;
+    animation:menuFadeIn .25s ease forwards;
   }
   @keyframes menuFadeIn{
-    from{opacity:0;transform:scale(.97)}
-    to{opacity:1;transform:scale(1)}
+    from{opacity:0}
+    to{opacity:1}
   }
   .nav-link{
     color:#fff !important;
-    padding:1rem 2.5rem;
+    padding:1rem 0;
     font-size:1.15rem;
-    border-radius:14px;
+    font-weight:700;
+    border-radius:0;
     width:100%;
-    max-width:300px;
+    max-width:260px;
     text-align:center;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.1);
+    background:transparent !important;
+    border:none !important;
+    border-bottom:1px solid rgba(255,255,255,.08) !important;
+    letter-spacing:.02em;
+    transition:color .2s ease, border-color .2s ease;
   }
+  .nav-link:last-child{border-bottom:none !important}
   .nav-link.active,
   .nav-link:hover{
-    background:rgba(30,79,143,.4) !important;
-    border-color:rgba(30,79,143,.5) !important;
-    color:#fff !important;
+    color:var(--orange-l) !important;
+    border-bottom-color:var(--orange-l) !important;
+    background:transparent !important;
   }
   .nav-link::before{display:none}
-  .nav-cta span{display:none}
-  .nav-toggle{
-    display:flex;
-    z-index:9999;
-    position:relative;
-  }
 
   /* Hero */
   .hero{padding-top:80px}
@@ -1354,6 +1360,35 @@ body:has(button:hover) .cursor{width:20px;height:20px}
   /* WhatsApp */
   .whatsapp-float{width:52px;height:52px;font-size:1.5rem;bottom:20px;right:20px}
   .back-top{bottom:82px;right:20px}
+
+/* X animada al abrir menú */
+  .nav-toggle.open span:nth-child(1){
+    transform:rotate(45deg) translate(5px,5px);
+  }
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){
+    transform:rotate(-45deg) translate(5px,-5px);
+  }
+
+/* Toggle siempre visible y sobre el menú */
+  .nav-toggle{
+    position:fixed !important;
+    top:18px;
+    right:20px;
+    z-index:10000 !important;
+    display:flex !important;
+    background:rgba(6,14,28,.6);
+    border-radius:8px;
+    padding:8px;
+  }
+  .nav-toggle span{background:#fff !important}
+  .nav-toggle.open span:nth-child(1){
+    transform:rotate(45deg) translate(5px,5px);
+  }
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){
+    transform:rotate(-45deg) translate(5px,-5px);
+  }
 }
 
 /* =====================================================
@@ -1415,25 +1450,4 @@ body:has(button:hover) .cursor{width:20px;height:20px}
   .stats-grid{grid-template-columns:1fr}
   .prod-tabs{grid-template-columns:1fr}
   .nos-cards{grid-template-columns:1fr}
-}
-/* Evita que el toggle desaparezca al hacer scroll */
-@media(max-width:768px){
-  .navbar{
-    background:rgba(8,15,30,.95) !important;
-    backdrop-filter:blur(20px);
-    padding:12px 0 !important;
-  }
-  .nav-toggle{display:flex !important}
-  .nav-toggle span{background:#fff !important}
-
-  /* X para cerrar el menú */
-  .nav-toggle.open span:nth-child(1){
-    transform:rotate(45deg) translate(5px,5px);
-    background:#fff;
-  }
-  .nav-toggle.open span:nth-child(2){opacity:0}
-  .nav-toggle.open span:nth-child(3){
-    transform:rotate(-45deg) translate(5px,-5px);
-    background:#fff;
-  }
 }

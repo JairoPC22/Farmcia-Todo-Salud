@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         this.r = Math.random() * 2.5 + .5;
         this.vx = (Math.random() - .5) * .4;
         this.vy = (Math.random() - .5) * .4;
-        this.alpha = Math.random() * .5 + .1;
+        this.alpha = Math.random() * .25 + .05;
       }
       update() {
         this.x += this.vx;
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    for (let i = 0; i < 55; i++) particles.push(new Particle());
+    for (let i = 0; i < 35; i++) particles.push(new Particle());
 
     // Connect close particles
     const connect = () => {
