@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/png" href="icono.png"/>
+<link rel="apple-touch-icon" href="icono.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Super Farmacia Todo+Salud – Tu bienestar es nuestra prioridad. Medicamentos, vitaminas, cuidado personal y atención farmacéutica profesional."/>
+  <title>Super Farmacia Todo+Salud</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/+14086858577?text=Hola,%20me%20interesa%20información%20sobre%20sus%20productos"
+     class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <div class="wa-ping"></div>
+    <span class="wa-label">¡Escríbenos!</span>
+  </a>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" aria-label="Volver arriba">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#inicio" class="nav-logo">
+        <img src="logo.png" alt="Super Farmacia Todo+Salud" class="logo-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="logo-fallback" style="display:none">
+          <i class="fas fa-plus-circle"></i>
+          <span>Todo<strong>+</strong>Salud</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio"      class="nav-link active"><span>Inicio</span></a></li>
+        <li><a href="#servicios"   class="nav-link"><span>Servicios</span></a></li>
+        <li><a href="#productos"   class="nav-link"><span>Productos</span></a></li>
+        <li><a href="#ofertas"     class="nav-link"><span>Ofertas</span></a></li>
+        <li><a href="#nosotros"    class="nav-link"><span>Nosotros</span></a></li>
+        <li><a href="#contacto"    class="nav-link"><span>Contacto</span></a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="nav-search-btn" id="navSearchBtn" aria-label="Buscar">
+          <i class="fas fa-search"></i>
+        </button>
+        <a href="tel:++14086858577" class="nav-cta">
+          <i class="fas fa-phone-alt"></i> <span>Llámanos</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search bar dropdown -->
+    <div class="nav-search-bar" id="navSearchBar">
+      <div class="search-inner">
+        <i class="fas fa-search search-ico"></i>
+        <input type="text" id="searchInput" placeholder="Buscar medicamentos, vitaminas..."/>
+        <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <!-- Animated mesh background -->
+    <div class="hero-mesh"></div>
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+    <div class="hero-container">
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-eyebrow" data-aos="fade-up">
+          <div class="eyebrow-dot"></div>
+          <span>Farmacia de confianza en tu comunidad</span>
+        </div>
+
+        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="80">
+          <span class="title-line">Tu salud</span>
+          <span class="title-line accent">merece lo mejor</span>
+          <span class="title-line sub">estamos aquí para cuidarte</span>
+        </h1>
+
+        <p class="hero-desc" data-aos="fade-up" data-aos-delay="160">
+          Medicamentos, vitaminas y asesoría farmacéutica profesional.
+          Más de <strong>1,500 productos</strong> disponibles para ti y tu familia.
+        </p>
+
+        <div class="hero-pills" data-aos="fade-up" data-aos-delay="220">
+          <div class="hero-pill"><i class="fas fa-shield-heart"></i> Productos originales</div>
+          <div class="hero-pill"><i class="fas fa-clock"></i> Abierto todos los días</div>
+          <div class="hero-pill orange"><i class="fas fa-percent"></i> Mejores precios</div>
+        </div>
+
+        <div class="hero-ctas" data-aos="fade-up" data-aos-delay="300">
+          <a href="#productos" class="btn btn-hero-primary">
+            <span>Ver Productos</span>
+            <div class="btn-arrow"><i class="fas fa-arrow-right"></i></div>
+          </a>
+          <a href="#contacto" class="btn btn-hero-ghost">
+            <i class="fas fa-map-location-dot"></i> Cómo llegar
+          </a>
+        </div>
+
+        <div class="hero-social-proof" data-aos="fade-up" data-aos-delay="380">
+          <div class="avatars">
+            <div class="av" style="background:#E85514">M</div>
+            <div class="av" style="background:#16a34a">C</div>
+            <div class="av" style="background:#8e44ad">L</div>
+            <div class="av" style="background:#0891b2">R</div>
+          </div>
+          <div class="proof-text">
+            <div class="stars-row">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span class="rating">5.0</span>
+            </div>
+            <span>+500 clientes satisfechos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-right" data-aos="fade-left" data-aos-delay="200">
+        <div class="hero-visual-wrap">
+          <!-- Orbital rings -->
+          <div class="orb-ring ring-a"></div>
+          <div class="orb-ring ring-b"></div>
+
+          <!-- Central card -->
+          <div class="hero-main-card">
+            <div class="hmc-glow"></div>
+            <div class="hmc-logo-wrap">
+              <img src="logo.png" alt="Super Farmacia" class="hmc-logo"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+              <div class="hmc-logo-fallback" style="display:none">
+                <i class="fas fa-plus-circle"></i>
+                <div>
+                  <span>Super Farmacia</span>
+                  <strong>Todo<span class="acc">+</span>Salud</strong>
+                </div>
+              </div>
+            </div>
+            <div class="hmc-divider"></div>
+            <div class="hmc-stats">
+              <div class="hmc-stat">
+                <strong class="count-hero" data-target="1500">0</strong>
+                <span>Productos</span>
+              </div>
+              <div class="hmc-sep"></div>
+              <div class="hmc-stat">
+                <strong class="count-hero" data-target="500">0</strong>
+                <span>Clientes</span>
+              </div>
+              <div class="hmc-sep"></div>
+              <div class="hmc-stat">
+                <strong>5★</strong>
+                <span>Rating</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Float cards -->
+          <div class="fcard fcard-1">
+            <div class="fcard-icon blue"><i class="fas fa-truck-fast"></i></div>
+            <div class="fcard-info">
+              <strong>Entrega rápida</strong>
+              <span>En tu zona</span>
+            </div>
+          </div>
+
+          <div class="fcard fcard-2">
+            <div class="fcard-icon orange"><i class="fas fa-tag"></i></div>
+            <div class="fcard-info">
+              <strong>Mejor precio</strong>
+              <span>Garantizado</span>
+            </div>
+          </div>
+
+          <div class="fcard fcard-3">
+            <div class="fcard-icon green"><i class="fas fa-user-doctor"></i></div>
+            <div class="fcard-info">
+              <strong>Asesoría gratis</strong>
+              <span>Farmacéuticos</span>
+            </div>
+          </div>
+
+          <!-- Floating icons -->
+          <div class="deco-blob b1"><i class="fas fa-capsules"></i></div>
+          <div class="deco-blob b2"><i class="fas fa-heart-pulse"></i></div>
+          <div class="deco-blob b3"><i class="fas fa-shield-heart"></i></div>
+          <div class="deco-blob b4"><i class="fas fa-pills"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,45 C240,90 480,0 720,45 C960,90 1200,0 1440,45 L1440,90 L0,90 Z" fill="#f0f4ff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats-belt">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-box reveal">
+          <div class="stat-ico"><i class="fas fa-pills"></i></div>
+          <div>
+            <div class="stat-val"><span class="counter" data-target="1500">0</span><sup>+</sup></div>
+            <div class="stat-lbl">Productos disponibles</div>
+          </div>
+        </div>
+        <div class="stat-box reveal">
+          <div class="stat-ico orange"><i class="fas fa-users"></i></div>
+          <div>
+            <div class="stat-val orange"><span class="counter" data-target="500">0</span><sup>+</sup></div>
+            <div class="stat-lbl">Clientes felices</div>
+          </div>
+        </div>
+        <div class="stat-box reveal">
+          <div class="stat-ico"><i class="fas fa-clock"></i></div>
+          <div>
+            <div class="stat-val"><span class="counter" data-target="12">0</span><sup>h</sup></div>
+            <div class="stat-lbl">Horas de atención</div>
+          </div>
+        </div>
+        <div class="stat-box reveal">
+          <div class="stat-ico orange"><i class="fas fa-star"></i></div>
+          <div>
+            <div class="stat-val orange"><span class="counter" data-target="100">0</span><sup>%</sup></div>
+            <div class="stat-lbl">Compromiso contigo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICIOS ===== -->
+  <section class="section servicios" id="servicios">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="s-chip"><i class="fas fa-circle-plus"></i> Servicios</span>
+        <h2 class="s-title">Todo lo que tu salud necesita</h2>
+        <p class="s-sub">Un catálogo completo pensado para el bienestar de toda tu familia.</p>
+      </div>
+      <div class="services-grid">
+        <div class="svc-card reveal" style="--accent:#1B5FB5">
+          <div class="svc-top">
+            <div class="svc-icon"><i class="fas fa-capsules"></i></div>
+            <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
+          </div>
+          <h3>Medicamentos</h3>
+          <p>Gran variedad de patente y genéricos con los mejores precios del mercado.</p>
+          <a href="#productos" class="svc-link">Explorar <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="svc-card reveal" style="--accent:#E85514">
+          <div class="svc-top">
+            <div class="svc-icon"><i class="fas fa-apple-whole"></i></div>
+            <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
+          </div>
+          <h3>Vitaminas y Suplementos</h3>
+          <p>Refuerza tu sistema inmune con la mejor selección de vitaminas y complementos.</p>
+          <a href="#productos" class="svc-link">Explorar <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="svc-card reveal" style="--accent:#16a34a">
+          <div class="svc-top">
+            <div class="svc-icon"><i class="fas fa-heart-pulse"></i></div>
+            <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
+          </div>
+          <h3>Control de Enfermedades</h3>
+          <p>Medicamentos para diabetes, hipertensión, colesterol y más enfermedades crónicas.</p>
+          <a href="#productos" class="svc-link">Explorar <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="svc-card reveal" style="--accent:#7c3aed">
+          <div class="svc-top">
+            <div class="svc-icon"><i class="fas fa-baby"></i></div>
+            <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
+          </div>
+          <h3>Cuidado del Bebé</h3>
+          <p>Productos especializados para la higiene y nutrición de los más pequeños.</p>
+          <a href="#productos" class="svc-link">Explorar <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="svc-card reveal" style="--accent:#d97706">
+          <div class="svc-top">
+            <div class="svc-icon"><i class="fas fa-spa"></i></div>
+            <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
+          </div>
+          <h3>Cuidado Personal</h3>
+          <p>Higiene, cosméticos y cuidado de la piel para lucirte cada día.</p>
+          <a href="#productos" class="svc-link">Explorar <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="svc-card reveal svc-highlight" style="--accent:#1B5FB5">
+          <div class="svc-top">
+            <div class="svc-icon"><i class="fas fa-user-doctor"></i></div>
+            <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
+          </div>
+          <h3>Asesoría Farmacéutica</h3>
+          <p>Farmacéuticos certificados listos para orientarte sin costo adicional.</p>
+          <a href="#contacto" class="svc-link">Consultar <i class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTOS ===== -->
+  <section class="section productos-section" id="productos">
+    <div class="prod-blob"></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="s-chip"><i class="fas fa-tag"></i> Catálogo</span>
+        <h2 class="s-title">Nuestros Productos</h2>
+        <p class="s-sub">Filtra por categoría y encuentra todo lo que necesitas.</p>
+      </div>
+
+      <!-- Search + filter bar -->
+      <div class="prod-bar reveal">
+        <div class="prod-search">
+          <i class="fas fa-search"></i>
+          <input type="text" id="prodSearch" placeholder="Buscar producto..."/>
+        </div>
+        <div class="prod-tabs">
+          <button class="ptab active" data-tab="todos">Todos</button>
+          <button class="ptab" data-tab="medicamentos"><i class="fas fa-capsules"></i> Medicamentos</button>
+          <button class="ptab" data-tab="vitaminas"><i class="fas fa-lemon"></i> Vitaminas</button>
+          <button class="ptab" data-tab="cuidado"><i class="fas fa-spa"></i> Personal</button>
+          <button class="ptab" data-tab="bebe"><i class="fas fa-baby"></i> Bebé</button>
+        </div>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+
+        <div class="pcard reveal" data-category="medicamentos" data-name="analgésicos antifebriles dolor fiebre">
+          <div class="pcard-badge">Popular</div>
+          <div class="pcard-ico" style="--pc:#1B5FB5"><i class="fas fa-capsules"></i></div>
+          <h4>Analgésicos y Antifebriles</h4>
+          <p>Para el manejo del dolor, fiebre y malestar. Todas las marcas.</p>
+          <div class="pcard-foot">
+            <span class="pcat">Medicamento</span>
+            <a href="#contacto" class="pcard-btn">Consultar</a>
+          </div>
+        </div>
+
+        <div class="pcard reveal" data-category="medicamentos" data-name="antibióticos receta genérico patente">
+          <div class="pcard-ico" style="--pc:#E85514"><i class="fas fa-lungs"></i></div>
+          <h4>Antibióticos</h4>
+          <p>Amplia variedad bajo receta médica. Genéricos y de patente.</p>
+          <div class="pcard-foot">
+            <span class="pcat">Medicamento</span>
+            <a href="#contacto" class="pcard-btn">Consultar</a>
+          </div>
+        </div>
+
+        <div class="pcard reveal" data-category="medicamentos" data-name="antihipertensivos presión corazón cardiovascular">
+          <div class="pcard-ico" style="--pc:#e74c3c"><i class="fas fa-heart"></i></div>
+          <h4>Antihipertensivos</h4>
+          <p>Control de presión arterial y salud cardiovascular.</p>
+          <div class="pcard-foot">
+            <span class="pcat">Medicamento</span>
+            <a href="#contacto" class="pcard-btn">Consultar</a>
+          </div>
+        </div>
+
+        <div class="pcard reveal" data-category="medicamentos" data-name="diabetes insulina glucosa metformina">
+          <div class="pcard-ico" style="--pc:#0891b2"><i class="fas fa-syringe"></i></div>
+          <h4>Antidiabéticos</h4>
+          <p>Control de glucosa e insulina. Medicamentos certificados de alta calidad.</p>
+          <div class="pcard-foot">
+            <span class="pcat">Medicamento</span>
+            <a href="#contacto" class="pcard-btn">Consultar</a>
+          </div>
+        </div>
+
+        <div class="pcard reveal" data-category="vitaminas" data-name="vitamina c zinc efervescente defensas">
+          <div class="pcard-badge new">Nuevo</div>
+          <div class="pcard-ico" style="--pc:#f59e0b"><i class="fas fa-lemon"></i></div>
+          <h4>Vitamina C + Zinc</h4>
+          <p>Refuerza tus defensas con la combinación perfecta efervescente.</p>
+          <div class="pcard-foot">
+            <span class="pcat vitamina">Vitamina</span>
+            <a href="#contacto" class="pcard-btn">Consultar</a>
+          </div>
+        </div>
+
+        <div class="pcard reveal" data-category="vitaminas" data-name="vitamina d3 huesos calcio sol">
+          <div class="pcard-ico" style="--pc:#e67e22"><i class="fas fa-sun"></i></div>
+          <h4>Vitamina D3</h4>
+          <p>Esencial para huesos fuertes y sistema inmune. Varias presentaciones.</p>
+          <div class="pcard-foot">
+            <span class="pcat vitamina">Vitamina</span>
+            <a href="#contacto" class="pcard-btn">Consultar</a>
+          </div>
+        </div>
+
+        <div class="pcard reveal" data-category="vitaminas" data-name="multivitamínicos complejo adulto niño">
+          <div class="pcard-ico" style="--pc:#16a34a"><i class="fas fa-seedling"></i></div>
+          <h4>Multivitamínicos</h4>
+          <p>Complejos para adultos, niños y adultos mayores. Cápsulas y líquidos.</p>
+          <div class="pcard-foot">
+            <span class="pcat vitamina">Vitamina</span>
+            <a href="#contacto" class="pcard-btn">Consultar</a>
+          </div>
+        </div>
+
+        <div class="pcard reveal" data-category="cuidado" data-name="cuidado facial crema hidratante solar dermatológico">
+          <div class="pcard-ico" style="--pc:#7c3aed"><i class="fas fa-face-smile"></i></div>
+          <h4>Cuidado Facial</h4>
+          <p>Cremas hidratantes, protector solar y productos dermatológicos.</p>
+          <div class="pcard-foot">
+            <span class="pcat cuidado">Personal</span>
+            <a href="#contacto" class="pcard-btn">Consultar</a>
+          </div>
+        </div>
+
+        <div class="pcard reveal" data-category="cuidado" data-name="higiene jabón shampoo desodorante">
+          <div class="pcard-ico" style="--pc:#E85514"><i class="fas fa-pump-soap"></i></div>
+          <h4>Higiene Personal</h4>
+          <p>Jabones, shampoos, desodorantes y todo para tu higiene diaria.</p>
+          <div class="pcard-foot">
+            <span class="pcat cuidado">Personal</span>
+            <a href="#contacto" class="pcard-btn">Consultar</a>
+          </div>
+        </div>
+
+        <div class="pcard reveal" data-category="bebe" data-name="pañales toallitas húmedas bebé recién nacido">
+          <div class="pcard-badge offer">Oferta</div>
+          <div class="pcard-ico" style="--pc:#3b82f6"><i class="fas fa-baby"></i></div>
+          <h4>Pañales y Toallitas</h4>
+          <p>Las mejores marcas en pañales y toallitas para el cuidado de tu bebé.</p>
+          <div class="pcard-foot">
+            <span class="pcat bebe">Bebé</span>
+            <a href="#contacto" class="pcard-btn">Consultar</a>
+          </div>
+        </div>
+
+        <div class="pcard reveal" data-category="bebe" data-name="leche formula bebé nutrición infantil">
+          <div class="pcard-ico" style="--pc:#ec4899"><i class="fas fa-bottle-baby"></i></div>
+          <h4>Fórmulas Infantiles</h4>
+          <p>Leches maternizadas y fórmulas especiales para el crecimiento sano.</p>
+          <div class="pcard-foot">
+            <span class="pcat bebe">Bebé</span>
+            <a href="#contacto" class="pcard-btn">Consultar</a>
+          </div>
+        </div>
+
+        <div class="pcard reveal" data-category="vitaminas" data-name="omega 3 colesterol corazón triglicéridos">
+          <div class="pcard-ico" style="--pc:#0891b2"><i class="fas fa-fish"></i></div>
+          <h4>Omega 3</h4>
+          <p>Esencial para el corazón, cerebro y control de triglicéridos. Alta concentración.</p>
+          <div class="pcard-foot">
+            <span class="pcat vitamina">Vitamina</span>
+            <a href="#contacto" class="pcard-btn">Consultar</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="no-results" id="noResults" style="display:none">
+        <i class="fas fa-magnifying-glass"></i>
+        <p>No encontramos productos con ese nombre. <a href="#contacto">¡Consúltanos!</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OFERTAS FLASH ===== -->
+  <section class="ofertas-section" id="ofertas">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="s-chip orange"><i class="fas fa-bolt"></i> Promociones</span>
+        <h2 class="s-title">Ofertas Flash</h2>
+        <p class="s-sub">¡No te pierdas nuestras promociones especiales! Tiempo limitado.</p>
+      </div>
+
+      <div class="ofertas-grid reveal">
+        <div class="oferta-card big">
+          <div class="oferta-tag"><i class="fas fa-fire"></i> Hot deal</div>
+          <div class="oferta-icon"><i class="fas fa-capsules"></i></div>
+          <h3>Genéricos al<br/><span class="oferta-price">Mejor precio</span></h3>
+          <p>En nuestra gama de medicamentos genéricos certificados. Calidad garantizada.</p>
+          <a href="#contacto" class="btn btn-oferta">Ver oferta <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="oferta-card">
+          <div class="oferta-tag alt"><i class="fas fa-star"></i> Destacado</div>
+          <div class="oferta-icon sm"><i class="fas fa-lemon"></i></div>
+          <h3>Vitaminas<br/>en temporada</h3>
+          <p>Refuerza tu sistema inmunológico con vitamina C, D y zinc a precios especiales.</p>
+          <a href="#contacto" class="btn btn-oferta-ghost">Preguntar <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="oferta-card">
+          <div class="oferta-tag alt"><i class="fas fa-baby"></i> Familia</div>
+          <div class="oferta-icon sm"><i class="fas fa-baby"></i></div>
+          <h3>Productos<br/>para bebé</h3>
+          <p>Pañales, fórmulas y cuidado infantil de las mejores marcas a precios accesibles.</p>
+          <a href="#contacto" class="btn btn-oferta-ghost">Preguntar <i class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span><i class="fas fa-tag"></i> Precios especiales en vitaminas</span>
+      <span><i class="fas fa-pills"></i> Medicamentos genéricos disponibles</span>
+      <span><i class="fas fa-baby"></i> Productos de bebé a los mejores precios</span>
+      <span><i class="fas fa-heart"></i> Asesoría farmacéutica sin costo</span>
+      <span><i class="fas fa-star"></i> Tu farmacia de confianza</span>
+      <span><i class="fas fa-shield-heart"></i> Productos 100% originales</span>
+      <span><i class="fas fa-tag"></i> Precios especiales en vitaminas</span>
+      <span><i class="fas fa-pills"></i> Medicamentos genéricos disponibles</span>
+      <span><i class="fas fa-baby"></i> Productos de bebé a los mejores precios</span>
+      <span><i class="fas fa-heart"></i> Asesoría farmacéutica sin costo</span>
+      <span><i class="fas fa-star"></i> Tu farmacia de confianza</span>
+      <span><i class="fas fa-shield-heart"></i> Productos 100% originales</span>
+    </div>
+  </div>
+
+  <!-- ===== NOSOTROS ===== -->
+  <section class="nosotros" id="nosotros">
+    <div class="container nosotros-inner">
+      <div class="nos-left reveal">
+        <span class="s-chip light"><i class="fas fa-building-columns"></i> Quiénes Somos</span>
+        <h2 class="nos-title">Comprometidos con<br/><em>tu bienestar</em></h2>
+        <p>En <strong>Super Farmacia Todo+Salud</strong> somos más que una farmacia: somos tu aliado de confianza. Contamos con farmacéuticos certificados, un amplio catálogo y el compromiso de darte siempre la mejor atención.</p>
+
+        <ul class="nos-list">
+          <li><i class="fas fa-circle-check"></i> Productos originales y garantizados</li>
+          <li><i class="fas fa-circle-check"></i> Atención personalizada y profesional</li>
+          <li><i class="fas fa-circle-check"></i> Precios competitivos todos los días</li>
+          <li><i class="fas fa-circle-check"></i> Amplia disponibilidad de medicamentos</li>
+          <li><i class="fas fa-circle-check"></i> Cómodo y accesible para toda la familia</li>
+        </ul>
+
+        <a href="#contacto" class="btn btn-nos">
+          <i class="fas fa-location-dot"></i> Visítanos hoy
+        </a>
+      </div>
+      <div class="nos-right reveal">
+        <div class="nos-cards">
+          <div class="nos-feat">
+            <div class="nos-feat-ico"><i class="fas fa-medal"></i></div>
+            <h4>Calidad Garantizada</h4>
+            <p>Solo proveedores certificados para asegurarte la mejor calidad.</p>
+          </div>
+          <div class="nos-feat">
+            <div class="nos-feat-ico"><i class="fas fa-hand-holding-heart"></i></div>
+            <h4>Atención Humana</h4>
+            <p>Tratamos a cada cliente como parte de nuestra familia.</p>
+          </div>
+          <div class="nos-feat">
+            <div class="nos-feat-ico"><i class="fas fa-percent"></i></div>
+            <h4>Mejores Precios</h4>
+            <p>Los precios más bajos de la zona sin sacrificar calidad.</p>
+          </div>
+          <div class="nos-feat">
+            <div class="nos-feat-ico"><i class="fas fa-clock"></i></div>
+            <h4>Siempre Disponibles</h4>
+            <p>Amplios horarios para que nunca te falte lo que necesitas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIOS ===== -->
+  <section class="section testimonios" id="testimonios">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="s-chip"><i class="fas fa-comments"></i> Testimonios</span>
+        <h2 class="s-title">Lo que dicen nuestros clientes</h2>
+        <p class="s-sub">La confianza de nuestros clientes es nuestro mayor orgullo.</p>
+      </div>
+
+      <div class="tslider reveal">
+        <div class="ttrack" id="ttrack">
+
+          <div class="tcard">
+            <div class="tcard-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>"Excelente servicio, siempre encuentro lo que busco y el personal es muy amable. ¡Los precios son increíbles!"</p>
+            <div class="tcard-author">
+              <div class="tav" style="background:#1B5FB5">M</div>
+              <div><strong>María García</strong><span>Cliente frecuente</span></div>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>"Me asesoraron muy bien sobre los medicamentos para mi mamá. Se nota que saben lo que hacen. ¡100% recomendada!"</p>
+            <div class="tcard-author">
+              <div class="tav" style="background:#E85514">C</div>
+              <div><strong>Carlos Mendoza</strong><span>Cliente nuevo</span></div>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>"Tienen todo para mis hijos: pañales, vitaminas, jarabes… y siempre hay alguien que orienta. ¡Gracias!"</p>
+            <div class="tcard-author">
+              <div class="tav" style="background:#16a34a">L</div>
+              <div><strong>Laura Torres</strong><span>Mamá de 2 hijos</span></div>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+            </div>
+            <p>"Los mejores precios en medicamentos genéricos. La atención es rápida y siempre tienen lo que busco."</p>
+            <div class="tcard-author">
+              <div class="tav" style="background:#7c3aed">R</div>
+              <div><strong>Roberto Díaz</strong><span>Cliente habitual</span></div>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>"Lugar muy limpio, organizado y con personal capacitado. Se nota la dedicación con la que atienden."</p>
+            <div class="tcard-author">
+              <div class="tav" style="background:#d97706">A</div>
+              <div><strong>Ana Flores</strong><span>Primera visita</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="tslider-ctrl">
+          <button class="tslider-btn" id="tPrev"><i class="fas fa-chevron-left"></i></button>
+          <div class="tdots" id="tdots"></div>
+          <button class="tslider-btn" id="tNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HORARIOS ===== -->
+  <section class="section horarios" id="horarios">
+    <div class="container">
+      <div class="horarios-grid">
+        <div class="hor-card reveal">
+          <div class="hor-ico"><i class="fas fa-clock"></i></div>
+          <h3>Horarios</h3>
+          <div class="hor-rows">
+            <div class="hor-row">
+              <span>Lunes – Viernes</span>
+              <strong>8:00 AM – 8:00 PM</strong>
+            </div>
+            <div class="hor-row">
+              <span>Sábado</span>
+              <strong>8:00 AM – 6:00 PM</strong>
+            </div>
+            <div class="hor-row">
+              <span>Domingo</span>
+              <strong>9:00 AM – 3:00 PM</strong>
+            </div>
+          </div>
+          <div class="open-pill" id="openPill">
+            <span class="open-dot"></span>
+            <span id="openStatus">Verificando...</span>
+          </div>
+        </div>
+
+        <div class="hor-card reveal">
+          <div class="hor-ico orange"><i class="fas fa-phone-volume"></i></div>
+          <h3>Contáctanos</h3>
+          <div class="contact-links">
+            <a href="tel:++14086858577" class="clink">
+              <i class="fas fa-phone"></i> +1 925-557-1555
+            </a>
+            <a href="https://wa.me/+14086858577" target="_blank" class="clink green">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.facebook.com/p/Super-Farmacia-Todo-Salud-61582782901890/" target="_blank" class="clink fb">
+              <i class="fab fa-facebook"></i> Facebook
+            </a>
+          </div>
+        </div>
+
+        <div class="hor-card reveal">
+          <div class="hor-ico green"><i class="fas fa-location-dot"></i></div>
+          <h3>Encuéntranos</h3>
+          <p class="hor-loc-text">Visítanos en nuestra sucursal. ¡Te esperamos con todo lo que necesitas!</p>
+            <a href="https://www.google.com/maps/search/230+Jackson+St,+Hayward,+CA,+United+States" 
+            target="_blank" class="btn btn-map">
+            <i class="fas fa-map-location-dot"></i> Ver en Google Maps
+            </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section class="contacto-section" id="contacto">
+    <div class="contacto-top-wave">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C360,0 1080,60 1440,30 L1440,0 L0,0 Z" fill="#f0f4ff"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="s-chip light"><i class="fas fa-envelope"></i> Contacto</span>
+        <h2 class="s-title light">¿Tienes alguna pregunta?</h2>
+        <p class="s-sub light">Déjanos tu mensaje y te respondemos a la brevedad.</p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="cform reveal" id="contactForm" novalidate>
+          <div class="cform-row">
+            <div class="cform-group">
+              <label>Nombre completo</label>
+              <div class="cinput-wrap">
+                <i class="fas fa-user"></i>
+                <input type="text" id="nombre" placeholder="Tu nombre" required/>
+              </div>
+            </div>
+            <div class="cform-group">
+              <label>Teléfono</label>
+              <div class="cinput-wrap">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="telefono" placeholder="Tu número" required/>
+              </div>
+            </div>
+          </div>
+          <div class="cform-group full">
+  <label>Asunto</label>
+  <div class="custom-select-wrap" id="customSelectWrap">
+    <div class="custom-select-trigger" id="customSelectTrigger">
+      <i class="fas fa-tag"></i>
+      <span id="customSelectText">Selecciona un tema</span>
+      <i class="fas fa-chevron-down custom-select-arrow" id="customSelectArrow"></i>
+    </div>
+    <div class="custom-select-dropdown" id="customSelectDropdown">
+      <div class="custom-option" data-value="">
+        <i class="fas fa-circle-dot"></i> Selecciona un tema
+      </div>
+      <div class="custom-option" data-value="medicamentos">
+        <i class="fas fa-capsules"></i> Consulta sobre medicamentos
+      </div>
+      <div class="custom-option" data-value="precios">
+        <i class="fas fa-tag"></i> Consulta de precios
+      </div>
+      <div class="custom-option" data-value="pedido">
+        <i class="fas fa-box"></i> Hacer un pedido
+      </div>
+      <div class="custom-option" data-value="asesoria">
+        <i class="fas fa-user-doctor"></i> Asesoría farmacéutica
+      </div>
+      <div class="custom-option" data-value="otro">
+        <i class="fas fa-comment-dots"></i> Otro
+      </div>
+    </div>
+    <!-- select oculto para el formulario -->
+    <select id="asunto" required style="display:none">
+      <option value="" disabled selected>Selecciona un tema</option>
+      <option value="medicamentos">Consulta sobre medicamentos</option>
+      <option value="precios">Consulta de precios</option>
+      <option value="pedido">Hacer un pedido</option>
+      <option value="asesoria">Asesoría farmacéutica</option>
+      <option value="otro">Otro</option>
+    </select>
+  </div>
+</div>
+          <div class="cform-group full">
+            <label>Mensaje</label>
+            <textarea id="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-submit" id="submitBtn">
+            <span>Enviar Mensaje</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <div class="form-ok" id="formOk">
+            <i class="fas fa-circle-check"></i>
+            ¡Mensaje enviado! Nos pondremos en contacto pronto.
+          </div>
+        </form>
+
+        <div class="contact-side reveal">
+          <div class="cside-label">Síguenos</div>
+          <div class="csocials">
+            <a href="https://www.facebook.com/p/Super-Farmacia-Todo-Salud-61582782901890/" target="_blank" class="csoc fb">
+              <i class="fab fa-facebook-f"></i> <span>Facebook</span>
+            </a>
+            <a href="https://wa.me/+14086858577" target="_blank" class="csoc wa">
+              <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+            </a>
+          </div>
+          <div class="cpromo">
+            <div class="cpromo-ico"><i class="fas fa-percent"></i></div>
+            <h4>¡Pregunta por nuestras promociones!</h4>
+            <p>Tenemos ofertas especiales para clientes frecuentes y productos en temporada.</p>
+            <a href="https://wa.me/+14086858577" target="_blank" class="btn btn-wa-promo">
+              <i class="fab fa-whatsapp"></i> Preguntar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-body">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Super Farmacia" class="footer-logo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="footer-logo-fallback" style="display:none">
+            <i class="fas fa-plus-circle"></i>
+            <span>Todo<strong>+</strong>Salud</span>
+          </div>
+          <p>Tu bienestar es nuestra prioridad. Más que una farmacia, somos tu aliado de salud.</p>
+          <div class="fsocials">
+            <a href="https://www.facebook.com/p/Super-Farmacia-Todo-Salud-61582782901890/" target="_blank" class="fsoc fb"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/+14086858577" target="_blank" class="fsoc wa"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="fcol">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="#servicios">Medicamentos</a></li>
+            <li><a href="#servicios">Vitaminas y Suplementos</a></li>
+            <li><a href="#servicios">Cuidado Personal</a></li>
+            <li><a href="#servicios">Productos para Bebé</a></li>
+            <li><a href="#servicios">Asesoría Farmacéutica</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#nosotros">Quiénes Somos</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#ofertas">Ofertas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Contacto</h4>
+          <div class="fcontact">
+            <div><i class="fas fa-phone"></i> +1 925-557-1555</div>
+            <div><i class="fab fa-whatsapp"></i> WhatsApp disponible</div>
+            <div><i class="fas fa-clock"></i> Lun–Vie 8am–8pm</div>
+              <div><i class="fas fa-location-dot"></i> 230 Jackson St., Hayward, CA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2025 <strong>Super Farmacia Todo+Salud</strong> · Todos los derechos reservados</p>
+        <p>Hecho con <i class="fas fa-heart" style="color:#E85514"></i> para tu salud</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
