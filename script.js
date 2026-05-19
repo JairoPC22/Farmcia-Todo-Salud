@@ -66,14 +66,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
   navToggle?.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+    const isOpen = navLinks.classList.toggle('open');
     navToggle.classList.toggle('open');
+    // Bloquear scroll del body cuando el menú está abierto
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
   allLinks.forEach(l => {
     l.addEventListener('click', () => {
       navLinks.classList.remove('open');
       navToggle.classList.remove('open');
+      // Restaurar scroll al cerrar menú
+      document.body.style.overflow = '';
     });
   });
 

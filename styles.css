@@ -1215,24 +1215,49 @@ body:has(button:hover) .cursor{width:20px;height:20px}
     display:none;
     position:fixed;
     top:0;left:0;right:0;bottom:0;
-    background:rgba(8,15,30,.98);
-    backdrop-filter:blur(20px);
+    background:rgba(6,14,28,.97);
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
     flex-direction:column;
-    padding:100px 32px 40px;
-    gap:.35rem;
-    z-index:998;
-    justify-content:flex-start;
+    align-items:center;
+    justify-content:center;
+    gap:.5rem;
+    z-index:9990;
+    padding:20px;
+    overflow-y:auto;
   }
-  .nav-links.open{display:flex}
+  .nav-links.open{
+    display:flex;
+    animation:menuFadeIn .3s ease forwards;
+  }
+  @keyframes menuFadeIn{
+    from{opacity:0;transform:scale(.97)}
+    to{opacity:1;transform:scale(1)}
+  }
   .nav-link{
-    color:rgba(255,255,255,.85) !important;
-    padding:1rem 1.25rem;
-    font-size:1.1rem;
-    border-radius:12px;
+    color:#fff !important;
+    padding:1rem 2.5rem;
+    font-size:1.15rem;
+    border-radius:14px;
+    width:100%;
+    max-width:300px;
+    text-align:center;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
   }
-  .nav-link::before{background:rgba(255,255,255,.08) !important}
+  .nav-link.active,
+  .nav-link:hover{
+    background:rgba(30,79,143,.4) !important;
+    border-color:rgba(30,79,143,.5) !important;
+    color:#fff !important;
+  }
+  .nav-link::before{display:none}
   .nav-cta span{display:none}
-  .nav-toggle{display:flex;z-index:999;position:relative}
+  .nav-toggle{
+    display:flex;
+    z-index:9999;
+    position:relative;
+  }
 
   /* Hero */
   .hero{padding-top:80px}
@@ -1390,4 +1415,25 @@ body:has(button:hover) .cursor{width:20px;height:20px}
   .stats-grid{grid-template-columns:1fr}
   .prod-tabs{grid-template-columns:1fr}
   .nos-cards{grid-template-columns:1fr}
+}
+/* Evita que el toggle desaparezca al hacer scroll */
+@media(max-width:768px){
+  .navbar{
+    background:rgba(8,15,30,.95) !important;
+    backdrop-filter:blur(20px);
+    padding:12px 0 !important;
+  }
+  .nav-toggle{display:flex !important}
+  .nav-toggle span{background:#fff !important}
+
+  /* X para cerrar el menú */
+  .nav-toggle.open span:nth-child(1){
+    transform:rotate(45deg) translate(5px,5px);
+    background:#fff;
+  }
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){
+    transform:rotate(-45deg) translate(5px,-5px);
+    background:#fff;
+  }
 }

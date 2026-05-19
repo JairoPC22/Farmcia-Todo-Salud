@@ -1,12 +1,4 @@
-/* ============================================
-   SERVICE WORKER — Super Farmacia Todo+Salud
-   Versión: 1.0
-   ⚠️ Cambia 'farmacia-v1' a 'farmacia-v2', 
-   'farmacia-v3', etc. cada vez que 
-   hagas cambios en tu página.
-============================================ */
-
-const CACHE_NAME = 'farmacia-v1';
+const CACHE_NAME = 'farmacia-v2';
 
 const ARCHIVOS = [
   '/',
