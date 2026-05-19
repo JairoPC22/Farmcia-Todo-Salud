@@ -1144,174 +1144,250 @@ body:has(button:hover) .cursor{width:20px;height:20px}
 .back-top:hover{background:var(--blue-d);transform:translateY(-3px)}
 
 /* =====================================================
-   RESPONSIVE
+   RESPONSIVE — LAPTOP
 ===================================================== */
+@media(max-width:1280px){
+  .hero-title{
+    font-size:clamp(2rem,4vw,3.2rem);
+  }
+  .hero-visual-wrap{width:380px;height:400px}
+  .hero-main-card{width:260px;padding:1.6rem 1.8rem}
+  .hmc-logo{width:190px}
+  .fcard-1{right:-10px}
+  .fcard-2{left:-16px}
+}
+
+@media(max-width:1100px){
+  .hero-container{gap:32px}
+  .hero-title{font-size:clamp(1.9rem,3.8vw,3rem)}
+  .hero-visual-wrap{width:340px;height:360px}
+  .hero-main-card{width:240px}
+  .fcard{padding:.6rem .9rem}
+  .fcard-info strong{font-size:.78rem}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+}
+
 @media(max-width:1024px){
-  .hero-container{grid-template-columns:1fr;text-align:center;gap:48px}
-  .hero-desc,.hero-ctas,.hero-pills,.hero-social-proof,.hero-eyebrow{
+  .hero-container{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:40px;
+    padding:60px 28px;
+  }
+  .hero-desc,.hero-ctas,.hero-pills,
+  .hero-social-proof,.hero-eyebrow{
     margin-left:auto;margin-right:auto;
   }
   .hero-ctas{justify-content:center}
   .hero-pills{justify-content:center}
   .hero-social-proof{justify-content:center}
-  .hero-right{display:none}
+  .hero-right{display:flex;justify-content:center}
+  .hero-visual-wrap{width:420px;height:380px}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   .services-grid{grid-template-columns:repeat(2,1fr)}
   .products-grid{grid-template-columns:repeat(2,1fr)}
   .nosotros-inner{grid-template-columns:1fr}
-  .ofertas-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
+  .nos-right{max-width:600px;margin:0 auto}
+  .ofertas-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto auto;
+  }
   .oferta-card.big{grid-column:1/-1}
-  .horarios-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}
+  .horarios-grid{grid-template-columns:1fr 1fr}
   .contact-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
+  .contact-side{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:16px;
+  }
+  .cside-label{grid-column:1/-1}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
   .cursor,.cursor-follower{display:none}
 }
+
+/* =====================================================
+   RESPONSIVE — TABLET
+===================================================== */
 @media(max-width:768px){
+  /* Navbar mobile */
   .nav-links{
-    display:none;position:fixed;top:70px;left:0;right:0;
-    background:rgba(8,15,30,.97);backdrop-filter:blur(20px);
-    flex-direction:column;padding:1.5rem;gap:.25rem;z-index:999;
+    display:none;
+    position:fixed;
+    top:0;left:0;right:0;bottom:0;
+    background:rgba(8,15,30,.98);
+    backdrop-filter:blur(20px);
+    flex-direction:column;
+    padding:100px 32px 40px;
+    gap:.35rem;
+    z-index:998;
+    justify-content:flex-start;
   }
   .nav-links.open{display:flex}
-  .nav-link{color:rgba(255,255,255,.85) !important;padding:.75rem 1rem}
+  .nav-link{
+    color:rgba(255,255,255,.85) !important;
+    padding:1rem 1.25rem;
+    font-size:1.1rem;
+    border-radius:12px;
+  }
+  .nav-link::before{background:rgba(255,255,255,.08) !important}
   .nav-cta span{display:none}
-  .nav-toggle{display:flex}
-  .services-grid,.products-grid{grid-template-columns:1fr}
-  .tcard{min-width:100%}
-  .cform-row{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr;gap:32px}
-  .footer-bottom-inner{flex-direction:column;text-align:center}
-  .section{padding:70px 0}
-  .stats-grid{grid-template-columns:1fr 1fr}
-  .nos-cards{grid-template-columns:1fr}
-  .ofertas-grid{grid-template-columns:1fr}
+  .nav-toggle{display:flex;z-index:999;position:relative}
+
+  /* Hero */
+  .hero{padding-top:80px}
+  .hero-container{padding:50px 20px 60px}
+  .hero-title{
+    font-size:clamp(2.2rem,9vw,3.5rem);
+    text-align:center;
+  }
+  .hero-desc{font-size:.95rem;text-align:center}
+  .hero-pills{gap:.4rem}
+  .hero-pill{font-size:.75rem;padding:.3rem .8rem}
+  .hero-right{display:none}
+  .hero-ctas{
+    flex-direction:column;
+    align-items:center;
+    gap:.85rem;
+  }
+  .btn-hero-primary,.btn-hero-ghost{
+    width:100%;
+    max-width:320px;
+    justify-content:center;
+  }
+
+  /* Stats */
+  .stats-belt{padding:40px 0}
+  .stats-grid{
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+  .stat-box{padding:1.1rem 1.2rem}
+  .stat-val{font-size:1.6rem}
+
+  /* Sections */
+  .section{padding:60px 0}
+  .section-head{margin-bottom:40px}
+  .s-title{font-size:clamp(1.6rem,6vw,2.2rem)}
+
+  /* Services */
+  .services-grid{grid-template-columns:1fr;gap:16px}
+  .svc-card{padding:1.5rem}
+
+  /* Products */
+  .products-grid{grid-template-columns:1fr;gap:14px}
+  .prod-bar{padding:1rem}
+  .prod-tabs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:.4rem;
+  }
+  .ptab{justify-content:center;font-size:.8rem;padding:.45rem .8rem}
+
+  /* Ofertas */
+  .ofertas-grid{grid-template-columns:1fr;gap:14px}
   .oferta-card.big{grid-column:auto}
-  .prod-bar{padding:1.25rem}
+  .oferta-card h3{font-size:1.2rem}
+
+  /* Testimonios */
+  .tcard{min-width:100%}
+  .tslider{overflow:hidden}
+
+  /* Horarios */
+  .horarios-grid{
+    grid-template-columns:1fr;
+    max-width:100%;
+    gap:14px;
+  }
+
+  /* Nosotros */
+  .nos-cards{grid-template-columns:1fr 1fr;gap:12px}
+  .nos-title{font-size:1.8rem}
+
+  /* Contacto */
+  .cform{padding:1.75rem 1.25rem}
+  .cform-row{grid-template-columns:1fr}
+  .contact-side{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  /* Footer */
+  .footer-body{padding:50px 0 36px}
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .footer-brand p{max-width:100%}
+  .footer-bottom-inner{
+    flex-direction:column;
+    text-align:center;
+    gap:.4rem;
+  }
+
+  /* WhatsApp */
+  .whatsapp-float{width:52px;height:52px;font-size:1.5rem;bottom:20px;right:20px}
+  .back-top{bottom:82px;right:20px}
 }
-@media(max-width:480px){
-  .stats-grid{grid-template-columns:1fr}
-  .hero-ctas{flex-direction:column;align-items:center}
-  .btn{justify-content:center}
-  .hero-pills{gap:.45rem}
-}
+
 /* =====================================================
-   CUSTOM SELECT DROPDOWN
+   RESPONSIVE — MÓVIL PEQUEÑO
 ===================================================== */
-.custom-select-wrap{
-  position:relative;
-  width:100%;
+@media(max-width:480px){
+  .container{padding:0 16px}
+
+  /* Hero */
+  .hero-container{padding:44px 16px 52px}
+  .hero-title{font-size:clamp(2rem,11vw,3rem)}
+  .hero-social-proof{flex-direction:column;gap:.6rem;text-align:center}
+  .hero-eyebrow{font-size:.7rem}
+
+  /* Stats */
+  .stats-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .stat-box{
+    flex-direction:column;
+    text-align:center;
+    gap:.6rem;
+    padding:1rem;
+  }
+  .stat-ico{width:44px;height:44px;font-size:1.1rem}
+
+  /* Tabs productos */
+  .prod-tabs{grid-template-columns:1fr 1fr}
+  .ptab i{display:none}
+
+  /* Nosotros cards */
+  .nos-cards{grid-template-columns:1fr}
+
+  /* Ofertas ticker */
+  .ticker-track span{font-size:.78rem}
+
+  /* Form */
+  .cform{padding:1.4rem 1rem;border-radius:20px}
+  .btn-submit{font-size:.9rem;padding:.9rem}
+
+  /* Horarios */
+  .hor-row{flex-direction:column;align-items:flex-start;gap:.2rem}
+
+  /* Botones hero */
+  .btn-hero-primary,.btn-hero-ghost{
+    width:100%;
+    max-width:100%;
+    font-size:.9rem;
+  }
+
+  /* Nav search */
+  .nav-search-bar.open{padding:1rem 16px}
+  .search-inner{padding:.6rem 1rem}
 }
 
-.custom-select-trigger{
-  display:flex;
-  align-items:center;
-  gap:.85rem;
-  background:var(--bg);
-  border:1.5px solid var(--gray-2);
-  border-radius:14px;
-  padding:.85rem 1.1rem;
-  cursor:pointer;
-  transition:all .3s var(--ease);
-  user-select:none;
-  position:relative;
+/* =====================================================
+   RESPONSIVE — MÓVIL MUY PEQUEÑO
+===================================================== */
+@media(max-width:360px){
+  .hero-title{font-size:1.9rem}
+  .stats-grid{grid-template-columns:1fr}
+  .prod-tabs{grid-template-columns:1fr}
+  .nos-cards{grid-template-columns:1fr}
 }
-.custom-select-trigger:hover{
-  border-color:rgba(30,79,143,.3);
-  background:#fff;
-  box-shadow:0 4px 16px rgba(30,79,143,.08);
-}
-.custom-select-trigger.open{
-  border-color:var(--blue);
-  background:#fff;
-  box-shadow:0 4px 20px rgba(30,79,143,.12);
-  border-radius:14px 14px 0 0;
-}
-.custom-select-trigger i:first-child{
-  color:var(--gray-4);
-  font-size:.88rem;
-  width:16px;
-  text-align:center;
-  transition:color .3s;
-  flex-shrink:0;
-}
-.custom-select-trigger.open i:first-child{color:var(--blue)}
-
-.custom-select-trigger span{
-  flex:1;
-  font-size:.93rem;
-  color:var(--gray-4);
-  font-family:var(--fb);
-  transition:color .3s;
-}
-.custom-select-trigger.selected span{color:var(--gray-1);font-weight:500}
-
-.custom-select-arrow{
-  color:var(--gray-4);
-  font-size:.75rem;
-  transition:transform .3s var(--ease), color .3s;
-  flex-shrink:0;
-}
-.custom-select-trigger.open .custom-select-arrow{
-  transform:rotate(180deg);
-  color:var(--blue);
-}
-
-/* Dropdown panel */
-.custom-select-dropdown{
-  position:absolute;
-  top:100%;left:0;right:0;
-  background:#fff;
-  border:1.5px solid var(--blue);
-  border-top:none;
-  border-radius:0 0 14px 14px;
-  overflow:hidden;
-  max-height:0;
-  opacity:0;
-  transition:max-height .35s var(--ease), opacity .25s var(--ease);
-  z-index:100;
-  box-shadow:0 12px 32px rgba(30,79,143,.14);
-}
-.custom-select-dropdown.open{
-  max-height:280px;
-  opacity:1;
-}
-
-/* Opciones */
-.custom-option{
-  display:flex;
-  align-items:center;
-  gap:.85rem;
-  padding:.85rem 1.1rem;
-  font-size:.9rem;
-  color:var(--gray-6);
-  cursor:pointer;
-  transition:all .2s var(--ease);
-  border-bottom:1px solid var(--gray-2);
-  font-family:var(--fb);
-}
-.custom-option:last-child{border-bottom:none}
-.custom-option i{
-  color:var(--gray-4);
-  width:16px;
-  text-align:center;
-  font-size:.85rem;
-  flex-shrink:0;
-  transition:color .2s;
-}
-.custom-option:first-child{
-  color:var(--gray-4);
-  font-style:italic;
-  font-size:.87rem;
-}
-.custom-option:not(:first-child):hover{
-  background:var(--blue-pale);
-  color:var(--blue);
-  padding-left:1.4rem;
-}
-.custom-option:not(:first-child):hover i{color:var(--blue)}
-.custom-option.selected{
-  background:var(--blue-pale);
-  color:var(--blue);
-  font-weight:600;
-}
-.custom-option.selected i{color:var(--blue)}
