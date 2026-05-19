@@ -1,0 +1,25 @@
+{
+  "name": "Super Farmacia Todo+Salud",
+  "short_name": "TodoSalud",
+  "description": "Tu farmacia de confianza. Medicamentos, vitaminas y asesoría farmacéutica.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0e2a4d",
+  "theme_color": "#1e4878",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "aso-icono.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "aso-icono.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
