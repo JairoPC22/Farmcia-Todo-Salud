@@ -257,9 +257,9 @@ body:has(button:hover) .cursor{width:20px;height:20px}
 .hero::before{display:none}
 
 .hero-container{
-  max-width:1200px;margin:0 auto;padding:80px 28px;
+  max-width:1200px;margin:0 auto;padding:70px 28px;
   display:grid;grid-template-columns:1fr 1fr;
-  gap:60px;align-items:center;position:relative;z-index:2;
+  gap:40px;align-items:center;position:relative;z-index:2;
 }
 
 /* Hero Left */
@@ -279,7 +279,7 @@ body:has(button:hover) .cursor{width:20px;height:20px}
 
 .hero-title{
   font-family:var(--fh);font-weight:800;
-  font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.1;
+  font-size:clamp(1.9rem,3.2vw,3rem);line-height:1.1;
   margin-bottom:1.5rem;overflow:hidden;
 }
 .title-line{
