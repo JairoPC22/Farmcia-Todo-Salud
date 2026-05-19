@@ -279,7 +279,7 @@ body:has(button:hover) .cursor{width:20px;height:20px}
 
 .hero-title{
   font-family:var(--fh);font-weight:800;
-  font-size:clamp(1.9rem,3.2vw,3rem);line-height:1.1;
+  font-size:clamp(1.4rem,1.8vw,2.2rem);line-height:1.1;
   margin-bottom:1.5rem;overflow:hidden;
 }
 .title-line{
