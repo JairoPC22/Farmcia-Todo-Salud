@@ -3,8 +3,8 @@ const CACHE_NAME = 'farmacia-v4.5';
 const ARCHIVOS = [
   '/',
   '/index.html',
-  '/styles.css',
-  '/script.js',
+  '/styles.css?v=5',
+  '/script.js?v=5',
   '/aso-icono.png'
 ];
 
