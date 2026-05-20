@@ -1,4 +1,4 @@
-const CACHE_NAME = 'farmacia-v9';
+const CACHE_NAME = 'farmacia-v10';
 
 self.addEventListener('install', e => {
   self.skipWaiting();

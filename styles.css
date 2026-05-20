@@ -140,7 +140,7 @@ body:has(button:hover) .cursor{width:20px;height:20px}
   display:flex;align-items:center;gap:1.5rem;
 }
 .nav-logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
-.logo-img{height:50px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.15));transition:transform var(--t)}
+.logo-img{height:48px;width:auto;max-width:160px;border-radius:8px;transition:transform var(--t)}
 .logo-img:hover{transform:scale(1.05)}
 .logo-fallback{
   display:flex;align-items:center;gap:.5rem;
@@ -413,7 +413,7 @@ body:has(button:hover) .cursor{width:20px;height:20px}
   50%{transform:translateY(-14px)}
 }
 .hmc-logo-wrap{display:flex;justify-content:center;margin-bottom:1.25rem}
-.hmc-logo{width:220px;height:auto;filter:drop-shadow(0 4px 16px rgba(0,0,0,.2))}
+.hmc-logo{width:200px;height:auto;border-radius:10px}
 .hmc-logo-fallback{
   display:flex;align-items:center;gap:.75rem;
   font-family:var(--fh);color:#fff;
@@ -1062,7 +1062,7 @@ body:has(button:hover) .cursor{width:20px;height:20px}
 .footer{background:var(--dark);color:rgba(255,255,255,.7)}
 .footer-body{padding:72px 0 52px}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px}
-.footer-logo{height:50px;width:auto;filter:brightness(0) invert(1);opacity:.85;margin-bottom:1rem}
+.footer-logo{height:48px;width:auto;max-width:160px;border-radius:8px;opacity:.92;margin-bottom:1rem}
 .footer-logo-fallback{
   display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;
   font-family:var(--fh);color:rgba(255,255,255,.85);font-size:1.1rem;
@@ -1363,8 +1363,27 @@ body:has(button:hover) .cursor{width:20px;height:20px}
   .oferta-card h3{font-size:1.2rem}
 
   /* Testimonios */
-  .tcard{min-width:100%}
-  .tslider{overflow:hidden}
+  .tslider{overflow:hidden;padding:0 4px}
+  .ttrack{gap:16px}
+  .tcard{
+    min-width:100%;
+    padding:1.5rem;
+    border-radius:20px;
+    box-shadow:0 4px 20px rgba(0,0,0,.07);
+  }
+  .tcard-stars{font-size:.85rem;margin-bottom:.75rem}
+  .tcard > p{
+    font-size:.88rem;
+    line-height:1.65;
+    margin-bottom:1.25rem;
+  }
+  .tcard-author{gap:.65rem}
+  .tav{width:38px;height:38px;font-size:.95rem;flex-shrink:0}
+  .tcard-author strong{font-size:.85rem}
+  .tcard-author span{font-size:.75rem}
+  .tslider-ctrl{margin-top:1.5rem;gap:.75rem}
+  .tslider-btn{width:38px;height:38px;font-size:.85rem}
+  .tdot{width:8px;height:8px}
 
   /* Horarios */
   .horarios-grid{
@@ -1482,6 +1501,11 @@ body:has(button:hover) .cursor{width:20px;height:20px}
   /* Nav search */
   .nav-search-bar.open{padding:1rem 16px}
   .search-inner{padding:.6rem 1rem}
+
+/* Testimonios mobile pequeño */
+  .tcard{padding:1.25rem}
+  .tcard > p{font-size:.85rem}
+  .tslider-ctrl{gap:.5rem}
 }
 
 /* =====================================================
