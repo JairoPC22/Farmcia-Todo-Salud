@@ -11,8 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let mx = 0, my = 0, fx = 0, fy = 0;
 
   if (cursor && window.innerWidth > 1024) {
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.opacity = '1';
+  follower.style.opacity = '.6';
       cursor.style.left = mx + 'px';
       cursor.style.top  = my + 'px';
     });
